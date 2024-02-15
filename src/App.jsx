@@ -39,6 +39,7 @@ const useStyles = makeStyles({
     display: 'grid',
     gridTemplateColumns: '1fr 1fr',
     gap: '2em',
+    fontFamily: 'Roboto',
   },
 })
 
