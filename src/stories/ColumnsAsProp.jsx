@@ -1,11 +1,12 @@
 import { Table } from '../components/TableNext'
 import { users } from '../data'
+import { logUser } from '../utils'
 
 export default function ColumnsAsProp() {
   return (
     <Table
       records={users}
-      onClickRecord={user => console.log(user.name)}
+      onClickRecord={logUser}
       columns={[
         { label: 'Id', value: user => user.id, width: '65px' },
         {

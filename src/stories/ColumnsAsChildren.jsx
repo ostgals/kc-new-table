@@ -1,13 +1,10 @@
 import { users } from '../data'
 import { Column, Table } from '../components/TableNext'
+import { logUser } from '../utils'
 
 export default function ColumnsAsChildren({ classes }) {
   return (
-    <Table
-      records={users}
-      onClickRecord={user => console.log(user.name)}
-      classes={classes}
-    >
+    <Table records={users} onClickRecord={logUser} classes={classes}>
       <Column label="Id" value={user => user.id} width="65px" />
       <Column
         label="Full Name"

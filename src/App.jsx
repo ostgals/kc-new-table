@@ -6,6 +6,7 @@ import WithStyles from './stories/WithStyles'
 import CheckboxAndButton from './stories/CheckboxAndButton'
 import Story from './components/Story'
 import StyleSeparateCells from './stories/StyleSeparateCells'
+import InteractiveCells from './stories/InteractiveCells'
 
 function App() {
   const classes = useStyles()
@@ -27,6 +28,9 @@ function App() {
         </Story>
         <Story title="Restyle cell elements with Column.classes">
           <StyleSeparateCells />
+        </Story>
+        <Story title="Interactive cell">
+          <InteractiveCells />
         </Story>
       </div>
     </ThemeProvider>

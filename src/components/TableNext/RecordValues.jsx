@@ -12,6 +12,7 @@ const RecordValues = ({ record, onClick, className }) => {
     <div
       key={column.key ?? index}
       onMouseDown={column.interactive ? stopBubbling : undefined}
+      onClick={column.interactive ? stopBubbling : undefined}
       className={clsx(classes.cell, classes.valueCell, column.classes?.value)}
       style={{ ...column.style, textAlign: column.align }}
     >

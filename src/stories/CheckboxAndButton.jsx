@@ -11,6 +11,7 @@ import { users } from '../data'
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 import CellButton from '../components/TableNext/CellButton'
 import { cardsTableStyles } from './styles'
+import { logUser } from '../utils'
 
 const LikeCardsTable = withStyles(cardsTableStyles)(Table)
 
@@ -29,10 +30,7 @@ export default function CheckboxAndButton() {
       renderRecord={user => (
         <RecordRow key={user.id} className={classes.row}>
           <Checkbox size="small" color="primary" />
-          <RecordValues
-            record={user}
-            onClick={user => console.log(user.name)}
-          />
+          <RecordValues record={user} onClick={logUser} />
           <CellButton icon={faTrashAlt} />
         </RecordRow>
       )}
