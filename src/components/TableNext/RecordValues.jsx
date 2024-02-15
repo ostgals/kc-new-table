@@ -8,9 +8,9 @@ const stopBubbling = e => e.stopPropagation()
 const RecordValues = ({ record, onClick, className }) => {
   const { columns, classes } = useTable()
 
-  const cells = columns.map(column => (
+  const cells = columns.map((column, index) => (
     <div
-      key={column.key}
+      key={column.key ?? index}
       onMouseDown={column.interactive ? stopBubbling : undefined}
       className={clsx(classes.cell, classes.valueCell, column.classes?.value)}
       style={{ ...column.style, textAlign: column.align }}

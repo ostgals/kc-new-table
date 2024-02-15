@@ -11,3 +11,12 @@ export const orange = {
     paddingInline: 16,
   },
 }
+
+export const cardsTableStyles = {
+  recordRow: {
+    borderRadius: 2,
+  },
+  cellContainer: {
+    paddingInline: 16,
+  },
+}

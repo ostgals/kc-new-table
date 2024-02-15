@@ -7,9 +7,9 @@ const ColumnLabels = ({ className }) => {
 
   return (
     <div className={clsx(classes.cellContainer, className)}>
-      {columns.map(column => (
+      {columns.map((column, index) => (
         <div
-          key={column.key}
+          key={column.key ?? index}
           className={clsx(
             classes.cell,
             classes.labelCell,

@@ -1,4 +1,4 @@
-import { Checkbox, makeStyles, styled, withStyles } from '@material-ui/core'
+import { Checkbox, makeStyles, withStyles } from '@material-ui/core'
 import {
   Column,
   ColumnLabels,
@@ -10,11 +10,9 @@ import {
 import { users } from '../data'
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 import CellButton from '../components/TableNext/CellButton'
-import { orange } from './styles'
+import { cardsTableStyles } from './styles'
 
-const LikeCardsTable = styled(withStyles(orange)(Table))({
-  background: '#F0F0F0',
-})
+const LikeCardsTable = withStyles(cardsTableStyles)(Table)
 
 export default function CheckboxAndButton() {
   const classes = useStyles()
