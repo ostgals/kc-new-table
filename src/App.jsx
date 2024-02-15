@@ -29,7 +29,7 @@ function App() {
         <Story title="Restyle cell elements with Column.classes">
           <StyleSeparateCells />
         </Story>
-        <Story title="Interactive cell">
+        <Story title="Interactive cell & Restyle separate rows">
           <InteractiveCells />
         </Story>
       </div>
