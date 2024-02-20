@@ -8,12 +8,11 @@ const CellButton = ({
   disabled,
   onClick,
   className,
-  ...props
+  classes: classesProp,
 }) => {
-  const classes = useStyles(props)
+  const classes = useStyles({ classes: classesProp })
   return (
     <IconButton
-      size="small"
       color={color}
       disabled={disabled}
       onClick={onClick}
@@ -28,8 +27,13 @@ const useStyles = makeStyles(
   {
     root: {
       padding: 0,
+      width: 40,
+      height: 40,
+      fontSize: 20,
     },
-    icon: {},
+    icon: {
+      fontSize: 'inherit',
+    },
   },
   { name: 'CellButton' }
 )

@@ -1,4 +1,4 @@
-import { Checkbox, makeStyles, withStyles } from '@material-ui/core'
+import { makeStyles, withStyles } from '@material-ui/core'
 import {
   Column,
   ColumnLabels,
@@ -12,6 +12,7 @@ import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 import CellButton from '../components/TableNext/CellButton'
 import { cardsTableStyles } from './styles'
 import { logUser } from '../utils'
+import CellCheckbox from '../components/TableNext/CellCheckbox'
 
 const LikeCardsTable = withStyles(cardsTableStyles)(Table)
 
@@ -23,13 +24,13 @@ export default function CheckboxAndButton() {
       records={users}
       renderHeader={() => (
         <HeaderRow className={classes.row}>
-          <Checkbox size="small" color="primary" />
+          <CellCheckbox color="secondary" indeterminate />
           <ColumnLabels />
         </HeaderRow>
       )}
       renderRecord={user => (
         <RecordRow key={user.id} className={classes.row}>
-          <Checkbox size="small" color="primary" />
+          <CellCheckbox />
           <RecordValues record={user} onClick={logUser} />
           <CellButton icon={faTrashAlt} />
         </RecordRow>

@@ -5,7 +5,7 @@
  * @prop {string | number} width
  * @prop {'start' | 'center' | 'end'} align
  * @prop {React.CSSProperties} style
- * @prop {boolean} interactive Record cells won't propagate `mousedown` events if `true`
+ * @prop {boolean} interactive
  * @prop {{ label: string, value: string }} classes
  */
 
