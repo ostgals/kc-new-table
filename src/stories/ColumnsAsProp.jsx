@@ -21,7 +21,11 @@ export default function ColumnsAsProp() {
         },
         {
           label: 'Test overflow overflow overflow',
-          value: () => 'Test overflow overflow overflow',
+          value: () => (
+            <span>
+              Test <b>overflow overflow overflow</b>
+            </span>
+          ),
           width: '100px',
         },
       ]}

@@ -8,7 +8,7 @@ import {
   Table,
 } from '../components/TableNext'
 import { users } from '../data'
-import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
+import { faTrashAlt } from '@fortawesome/free-regular-svg-icons'
 import CellButton from '../components/TableNext/CellButton'
 import { cardsTableStyles } from './styles'
 import { logUser } from '../utils'

@@ -1,12 +1,12 @@
 import { ThemeProvider, makeStyles } from '@material-ui/core'
-import { theme } from './theme'
+import Story from './components/Story'
+import CheckboxAndButton from './stories/CheckboxAndButton'
 import ColumnsAsChildren from './stories/ColumnsAsChildren'
 import ColumnsAsProp from './stories/ColumnsAsProp'
-import WithStyles from './stories/WithStyles'
-import CheckboxAndButton from './stories/CheckboxAndButton'
-import Story from './components/Story'
-import StyleSeparateCells from './stories/StyleSeparateCells'
 import InteractiveCells from './stories/InteractiveCells'
+import StyleSeparateCells from './stories/StyleSeparateCells'
+import WithStyles from './stories/WithStyles'
+import { theme } from './theme'
 
 function App() {
   const classes = useStyles()
@@ -44,6 +44,9 @@ const useStyles = makeStyles({
     gridTemplateColumns: '1fr 1fr',
     gap: '2em',
     fontFamily: 'Roboto',
+  },
+  fullWidth: {
+    gridColumn: '1 / -1',
   },
 })
 
