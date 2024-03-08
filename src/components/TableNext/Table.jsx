@@ -14,14 +14,24 @@ const Table = ({
   columns: columnsProp,
   records,
   onClickRecord,
-  renderHeader: customRenderHeader,
-  renderRecord: customRenderRecord,
-  children,
-  className,
   classes: classesProp,
+  className,
+  children,
+
   recordGap = 9,
   columnGap = 8,
   recordsDropShadow = true,
+
+  renderHeader = () => (
+    <HeaderRow>
+      <ColumnLabels />
+    </HeaderRow>
+  ),
+  renderRecord = (record, index) => (
+    <RecordRow key={index}>
+      <RecordValues record={record} onClick={onClickRecord} />
+    </RecordRow>
+  ),
 }) => {
   const columns =
     columnsProp ??
@@ -43,22 +53,6 @@ const Table = ({
     recordsDropShadow,
     classes: classesProp,
   })
-
-  const renderHeader =
-    customRenderHeader ??
-    (() => (
-      <HeaderRow>
-        <ColumnLabels />
-      </HeaderRow>
-    ))
-
-  const renderRecord =
-    customRenderRecord ??
-    ((record, index) => (
-      <RecordRow key={index}>
-        <RecordValues record={record} onClick={onClickRecord} />
-      </RecordRow>
-    ))
 
   return (
     <TableContext.Provider value={{ columns, classes }}>
@@ -117,11 +111,13 @@ const useStyles = makeStyles(
 
     cellContainer: {
       boxSizing: 'border-box',
+      padding: theme.spacing(0, 2),
       minWidth: '100%',
       width: 'fit-content',
       height: '100%',
       display: 'grid',
       placeItems: 'center stretch',
+      color: theme.palette.primary.main,
       gridTemplateColumns: props => props.gridTemplateColumns,
       gap: props => props.columnGap,
     },

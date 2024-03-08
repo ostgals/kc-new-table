@@ -21,9 +21,8 @@ export const calcGridTemplateColumns = columns => {
         return width
       }
       if (isNumber(width)) {
-        return width <= 1
-          ? `${width}fr`
-          : `minmax(${width}px, ${width / avgNumericWidth}fr)`
+        const fraction = avgNumericWidth ? width / avgNumericWidth : 1
+        return `minmax(${width}px, ${fraction}fr)`
       }
       return '1fr'
     })

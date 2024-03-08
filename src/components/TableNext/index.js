@@ -6,5 +6,4 @@ export { default as RecordValues } from './RecordValues'
 export { default as Column } from './Column'
 export { default as CellButton } from './CellButton'
 export { default as CellCheckbox } from './CellCheckbox'
-
 export { useTable } from './utils'
